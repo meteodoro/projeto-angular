@@ -2,7 +2,7 @@
 
 Uma experiência digital inspirada na cultura dos discos de vinil, na atmosfera dos antigos clubes de música e na estética vintage associada ao jazz, soul e blues.
 
-A **Solstice Records** é uma aplicação desenvolvida em Angular como projeto acadêmico, transformando uma proposta de identidade visual em uma experiência web completa para uma loja fictícia de discos.
+A Solstice Records é uma aplicação desenvolvida em Angular como projeto acadêmico, inspirada na atmosfera do single "Colors", do Black Pumas, e transformada em uma experiência web para uma loja fictícia de discos.
 
 ---
 
@@ -28,6 +28,26 @@ A Solstice Records foi construída a partir da ideia de uma **loja de discos com
 A identidade visual utiliza tons escuros, vinho, creme e detalhes em dourado envelhecido, acompanhados por elementos inspirados em gravuras e tatuagens japonesas.
 
 O objetivo foi criar uma experiência que remetesse à sensação de entrar em uma loja de discos ou em um pequeno clube de música: discreta, elegante e voltada para a descoberta.
+
+---
+
+## Inspiração
+
+A principal referência para o desenvolvimento da Solstice Records foi o single **"Colors"**, da banda **Black Pumas**.
+
+A partir da atmosfera visual e musical associada à obra, foram explorados elementos como:
+
+* Estética vintage e psicodélica
+* Jazz, soul e blues
+* Cultura dos discos de vinil
+* Atmosfera intimista e noturna
+* Tons quentes e escuros
+* Referências à estética de tatuagem tradicional japonesa
+* Elementos gráficos relacionados à música e à cultura analógica
+
+A referência serviu como ponto de partida para a criação do **moodboard e da identidade visual**, que posteriormente foram adaptados para uma proposta própria de loja de discos.
+
+O objetivo não foi reproduzir a capa do single, mas utilizar sua atmosfera como inspiração para desenvolver uma identidade visual própria para a Solstice Records.
 
 ---
 
