@@ -1,3 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --color-fundo: #0d0b0a;
+  --color-creme: #f1e9dc;
+  --color-destaque: #a8322b;
+}
+
+body {
+  @apply bg-fundo text-creme min-h-screen font-inter;
+  position: relative;
+  background-color: #0F0F0F;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(107, 30, 30, 0.22), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(184, 155, 106, 0.12), transparent 45%);
+  background-attachment: fixed;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+
+h1, h2, h3 {
+  @apply font-playfair;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url('/textures/noise.svg');
+}

@@ -1,0 +1,17 @@
+<div class="bg-fundo text-creme rounded p-3 flex flex-col gap-2">
+    <a [routerLink]="['/discos', disco().id]">
+      <img [src]="disco().capa" [alt]="disco().titulo" class="rounded w-full" />
+    </a>
+  <div>
+    <h3 class="font-bold">{{ disco().titulo }}</h3>
+    <p class="text-sm opacity-80">{{ disco().artista }}</p>
+    <app-badge-genero [genero]="disco().genero" [faixas]="disco().faixas" />
+  </div>
+
+  <div class="flex items-center justify-between">
+    <span>R$ {{ disco().preco | number:'1.2-2' }}</span>
+    <button (click)="onFavoritar()" class="text-lg transition-colors" [class.text-destaque]="favoritado()" [class.text-creme]="!favoritado()">
+      {{ favoritado() ? '♥' : '♡' }}
+    </button>
+  </div>
+</div>

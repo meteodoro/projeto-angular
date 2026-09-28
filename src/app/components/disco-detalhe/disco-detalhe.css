@@ -1,0 +1,8 @@
+.vinil {
+    transition: transform .6s ease;
+    cursor: pointer;
+}
+
+.vinil.girando{
+    transform: rotate(360deg);
+}

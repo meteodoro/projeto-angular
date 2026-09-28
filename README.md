@@ -1,59 +1,209 @@
-# Solstice
+# Solstice Records 🎵
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Uma experiência digital inspirada na cultura dos discos de vinil, na atmosfera dos antigos clubes de música e na estética vintage associada ao jazz, soul e blues.
 
-## Development server
+A **Solstice Records** é uma aplicação desenvolvida em Angular como projeto acadêmico, transformando uma proposta de identidade visual em uma experiência web completa para uma loja fictícia de discos.
 
-To start a local development server, run:
+---
+
+## Sobre o projeto
+
+O projeto faz parte da atividade **"Da capa para a tela"**, que propõe a criação de uma SPA em Angular a partir de uma referência visual.
+
+O processo foi dividido em quatro etapas:
+
+1. Conceito da referência
+2. Criação do moodboard
+3. Desenvolvimento da identidade visual
+4. Construção da aplicação
+
+A proposta da Solstice Records foi transformar a atmosfera da referência em uma loja de discos com uma identidade própria, sem reproduzir diretamente a capa utilizada como inspiração.
+
+---
+
+## Conceito
+
+A Solstice Records foi construída a partir da ideia de uma **loja de discos com atmosfera intimista, vintage e sofisticada**, combinando elementos da cultura analógica com referências de jazz, soul, blues e estética japonesa tradicional.
+
+A identidade visual utiliza tons escuros, vinho, creme e detalhes em dourado envelhecido, acompanhados por elementos inspirados em gravuras e tatuagens japonesas.
+
+O objetivo foi criar uma experiência que remetesse à sensação de entrar em uma loja de discos ou em um pequeno clube de música: discreta, elegante e voltada para a descoberta.
+
+---
+
+## Funcionalidades
+
+* Página inicial com apresentação da loja
+* Catálogo de discos
+* Navegação por categorias e gêneros musicais
+* Página de detalhes dos discos
+* Carrinho de compras lateral
+* Adição e remoção de discos do carrinho
+* Sistema de favoritos
+* Formulário de inscrição na newsletter
+* Formulário de contato
+* Página institucional "Sobre"
+* Navegação entre as páginas por rotas do Angular
+* Página para rotas não encontradas
+* Layout responsivo para diferentes tamanhos de tela
+
+---
+
+## Tecnologias
+
+* **Angular**
+* **TypeScript**
+* **Tailwind CSS**
+* **HTML**
+* **CSS**
+* **Signals**
+* **Reactive Forms**
+* **Angular Router**
+
+---
+
+## Identidade visual
+
+A identidade da Solstice Records foi construída com uma direção visual inspirada em:
+
+* Cultura do vinil
+* Jazz e soul
+* Estética vintage
+* Clubes de música
+* Atmosfera noturna
+* Elementos de tatuagem tradicional japonesa
+* Fotografia e textura analógica
+
+### Paleta
+
+A interface utiliza principalmente tons escuros e quentes, com o vinho como cor de destaque e creme para textos e elementos de contraste.
+
+### Tipografia
+
+A identidade utiliza duas famílias tipográficas:
+
+* **Playfair Display** — títulos e elementos de destaque
+* **Inter** — textos, navegação e informações da interface
+
+---
+
+## Estrutura da aplicação
+
+A aplicação é organizada em diferentes páginas e componentes, permitindo a navegação entre as principais áreas da loja.
+
+Entre elas estão:
+
+* Home
+* Catálogo
+* Detalhes do disco
+* Sobre
+* Contato
+* Carrinho
+* Página não encontrada
+
+A aplicação também utiliza componentes reutilizáveis para elementos da interface.
+
+---
+
+## Estado da aplicação
+
+O projeto utiliza **Signals** para representar dados que podem mudar durante a interação com a aplicação.
+
+Também são utilizados valores derivados por meio de `computed()`, como informações relacionadas ao estado do catálogo e do carrinho.
+
+O carrinho possui um serviço próprio responsável pelo gerenciamento dos itens adicionados.
+
+---
+
+## Formulários
+
+A aplicação possui formulários com validação, incluindo:
+
+* Inscrição na newsletter
+* Formulário de contato
+
+A newsletter apresenta uma confirmação visual após a inscrição.
+
+---
+
+## Responsividade
+
+A interface foi desenvolvida pensando em diferentes tamanhos de tela, utilizando as classes responsivas do Tailwind CSS para adaptar:
+
+* Navegação
+* Grid de produtos
+* Categorias
+* Imagens
+* Formulários
+* Espaçamentos
+* Tipografia
+
+---
+
+## Como executar
+
+### Pré-requisitos
+
+É necessário ter o **Node.js** e o **Angular CLI** instalados.
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git github.com/meteodoro/projeto-angular.git
+```
+
+Entre na pasta do projeto:
+
+```bash
+cd solstice-records
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute a aplicação:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Depois, acesse:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Estrutura visual
 
-## Building
+O projeto foi desenvolvido seguindo a identidade visual definida durante as etapas de pesquisa e criação.
 
-To build the project run:
+Os materiais do processo incluem:
 
-```bash
-ng build
-```
+* Moodboard
+* Identidade visual
+* Conceito
+* Aplicação final
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Esses materiais podem ser encontrados neste repositório.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Projeto acadêmico
 
-```bash
-ng test
-```
+Projeto desenvolvido como parte dos estudos de **Angular**, com foco na aplicação prática de conceitos de desenvolvimento de aplicações web, componentes, roteamento, gerenciamento de estado, formulários e estilização com Tailwind CSS.
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Autora
 
-```bash
-ng e2e
-```
+**Maria Eduarda Teodoro**
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[LinkedIn](https://www.linkedin.com/in/meteodoro/)
+[GitHub](https://github.com/meteodoro)

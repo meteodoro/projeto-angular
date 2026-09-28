@@ -1,0 +1,77 @@
+<section class="relative min-h-[65vh] flex flex-col justify-center gap-4 px-8 md:px-20 lg:px-24 bg-cover bg-center overflow-hidden"
+  style="background-image: url('/assets/capa.jpg')">
+
+    <div class="absolute inset-0 z-0 bg-gradient-to-r from-fundo from-0% via-fundo/60 via-35% to-transparent to-65%"></div>
+    
+    <div class="relative z-20 max-w-xl">
+        <h1 class="font-titulo text-4xl md:text-5xl font-bold leading-tight text-creme max-w-lg">Grandes histórias também são ouvidas.</h1>
+        <p class="opacity-80 mt-2 text-creme">Discos de vinil, jazz, blues, soul e muito mais.</p>
+
+        <a routerLink="/catalogo" class="font-inter inline-block mt-6 bg-destaque text-creme px-6 py-2 rounded-md text-sm tracking-widest">EXPLORAR DISCOS →</a>
+
+        <form [formGroup]="form" (ngSubmit)="inscrever()" class="flex flex-col gap-2 mt-6 max-w-sm">
+            <label class="text-sm opacity-80">Fique por dentro dos lançamentos:</label>
+            <input formControlName="email" placeholder="seu@email.com" class="p-2 rounded bg-transparent border border-creme/30"/>
+
+            @if (form.get('email')?.invalid && form.get('email')?.touched) {
+                <p class="text-red-400 text-xs">Informe um e-mail válido.</p>
+            }
+            <button type="submit" [disabled]="form.invalid" class="mt-4 font-inter text-sm tracking-widest bg-destaque text-creme px-6 py-2 rounded-md disabled:opacity-40 w-fit">INSCREVER-SE</button>
+        </form>
+
+        @if (mensagemSucesso) {
+            <div class="fixed bottom-6 right-6 z-50 bg-[#171313] border border-[#8f3028] text-[#ebdcc9] px-5 py-4 rounded-lg shadow-xl flex items-center gap-3 animate-fade-in">
+                <span class="text-[#b63a30] text-xl">✓</span>
+
+                <div>
+                    <p class="font-semibold">Inscrição realizada!</p>
+                    <p class="text-sm text-[#a99b8b]">Obrigado por acompanhar a Solstice Records.</p>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>
+
+<section class="px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
+    <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -right-32 top-1/2 w-[500px] -translate-y-1/2 opacity-[0.07] rotate-6">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="font-titulo text-xl font-bold tracking-widest">LANÇAMENTOS</h2>
+
+        <a routerLink="/catalogo" class="font-inter text-xs tracking-widest uppercase text-creme/70 hover:text-destaque transition-colors">
+            VER TODOS →</a>
+    </div>
+    @if (carregando()) {
+        <p>Carregando…</p>
+    } 
+    @else {
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            @for (disco of destaques(); track disco.id) {
+                <app-disco-card [disco]="disco" (favoritar)="onFavoritar($event)"/>
+            }
+        </div>
+    }
+</section>
+
+<div class="flex justify-center items-center gap-4 py-8 opacity-60">
+    <div class="w-45 h-px bg-[#B8986A]"></div>
+    <span class="text-[#B8986A] text-lg">✦</span>
+    <div class="w-45 h-px bg-[#B8986A]"></div>
+</div>
+
+<section class="px-8 md:px-16 lg:px-24 py-12 overflow-hidden">
+    <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -left-32 top-1/4 w-[300px] -translate-y-1/2 -scale-x-100 opacity-[0.07] rotate-6">
+    <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -left-32 top-3/4 w-[500px] -translate-y-1/2 -scale-x-100 opacity-[0.07] rotate-6">
+    <h2 class="font-titulo text-xl font-bold tracking-widest mb-8">CATEGORIAS</h2>
+
+    <div class="grid grid-cols-3 md:grid-cols-3 gap-15">
+        @for (genero of generos; track genero.termo) {
+        <a [routerLink]="['/catalogo']" [queryParams]="{ genero: genero.termo }" class="relative rounded-lg overflow-hidden aspect-[5/3] group">
+            <img [src]="genero.capa" [alt]="genero.nome" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-fundo/80 via-transparent to-transparent flex items-end p-6">
+                <span class="font-playfair text-2xl text-creme tracking-widest">{{ genero.nome }}</span>
+            </div>
+        </a>
+        }
+    </div>
+</section>
