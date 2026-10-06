@@ -1,0 +1,45 @@
+<section class="relative min-h-[80vh] flex items-center justify-center px-8 py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(182,58,48,0.12),transparent_40%)]"></div>
+    <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -right-32 top-1/2 w-[500px] -translate-y-1/2 opacity-[0.07] rotate-6">
+    <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -left-32 top-3/4 w-[500px] -translate-y-1/2 -scale-x-100 opacity-[0.07] rotate-6">
+
+    <div appAnimarScroll class="relative z-10 w-full max-w-md opacity-0 translate-y-8 transition-all duration-700 ease-out">
+        <h1 class="font-playfair text-4xl md:text-5xl text-creme leading-tight">Entrar na sua conta</h1>
+        <p class="font-inter text-creme/60 mt-4 leading-relaxed">
+            Acesse sua conta para acompanhar seus discos favoritos.
+        </p>
+
+        <form [formGroup]="form" (ngSubmit)="entrar()" class="space-y-6 mt-10" novalidate>
+            <div>
+                <label for="email" class="block font-inter text-sm text-creme/80 mb-2">E-mail</label>
+                <input id="email" type="email" formControlName="email" placeholder="seu@email.com" autocomplete="email"
+                    class="w-full bg-transparent border border-[#B8986A]/60 rounded-md px-4 py-3 text-creme placeholder:text-creme/30 focus:outline-none focus:border-destaque transition-colors"/>
+                @if (form.controls.email.invalid && form.controls.email.touched) {
+                    <p class="text-red-400 text-xs mt-2">Informe um e-mail válido.</p>
+                }
+            </div>
+
+            <div>
+                <label for="senha" class="block font-inter text-sm text-creme/80 mb-2">Senha</label>
+                <input id="senha" type="password" formControlName="senha" placeholder="Sua senha" autocomplete="current-password"
+                    class="w-full bg-transparent border border-[#B8986A]/60 rounded-md px-4 py-3 text-creme placeholder:text-creme/30 focus:outline-none focus:border-destaque transition-colors"/>
+                @if (form.controls.senha.invalid && form.controls.senha.touched) {
+                    <p class="text-red-400 text-xs mt-2">Informe sua senha.</p>
+                }
+            </div>
+
+            @if (erro()) {
+                <p class="text-red-400 text-sm" role="alert">{{ erro() }}</p>
+            }
+
+            <button type="submit" [disabled]="enviando()"
+                class="font-inter text-sm tracking-widest bg-destaque text-creme px-7 py-3 rounded-md hover:opacity-90 transition-opacity disabled:opacity-40 cursor-pointer w-full">
+                {{ enviando() ? 'ENTRANDO...' : 'ENTRAR' }}
+            </button>
+        </form>
+
+        <a routerLink="/" class="inline-block mt-8 font-inter text-xs tracking-widest uppercase text-creme/70 hover:text-destaque transition-colors">
+            ← VOLTAR AO INÍCIO
+        </a>
+    </div>
+</section>
