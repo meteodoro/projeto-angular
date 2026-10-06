@@ -6,3 +6,24 @@
 .vinil.girando{
     transform: rotate(360deg);
 }
+
+@keyframes aparecer-faixa {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faixa-animada {
+  animation: aparecer-faixa 500ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faixa-animada {
+    animation: none;
+  }
+}

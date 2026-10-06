@@ -5,9 +5,10 @@ import { DiscoService } from '../../service/disco.service';
 import { FavoritosService } from '../../service/favoritos.service';
 import { CarrinhoService } from '../../service/carrinho.service';
 import { Disco } from '../../models/disco.model';
+import { AnimarScroll } from '../animar-scroll/animar-scroll';
 
 @Component({
-  imports: [ DecimalPipe ],
+  imports: [ DecimalPipe, AnimarScroll ],
   selector: 'app-disco-detalhe',
   styleUrl: './disco-detalhe.css',
   templateUrl: './disco-detalhe.html',

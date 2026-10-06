@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { DiscoCard } from '../disco-card/disco-card';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { FavoritosService } from '../../service/favoritos.service';
+import { AnimarScroll } from '../animar-scroll/animar-scroll';
 
 
 @Component({
-  imports: [FormsModule, DiscoCard, RouterLink],
+  imports: [FormsModule, DiscoCard, RouterLink, AnimarScroll],
   selector: 'app-catalogo',
   styleUrl: './catalogo.css',
   templateUrl: './catalogo.html',

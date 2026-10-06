@@ -1,4 +1,5 @@
 import { Component, inject, signal, computed } from '@angular/core';
+import { AnimarScroll } from '../animar-scroll/animar-scroll';
 import { Disco } from '../../models/disco.model';
 import { DiscoService } from '../../service/disco.service';
 import { DiscoCard } from '../disco-card/disco-card';
@@ -6,13 +7,13 @@ import { RouterLink } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
 
-
 @Component({
-  imports: [ DiscoCard, RouterLink, ReactiveFormsModule ],
+  imports: [ DiscoCard, RouterLink, ReactiveFormsModule, AnimarScroll ],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
 })
+
 export class Home {
   private discoService = inject(DiscoService);
 

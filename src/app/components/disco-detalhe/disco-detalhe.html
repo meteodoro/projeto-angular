@@ -1,4 +1,4 @@
-<div>
+<div class="relative overflow-hidden">
     <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -right-32 top-1/2 w-[500px] -translate-y-1/2 opacity-[0.07] rotate-6">
     <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -right-10 w-[300px] -translate-y-1/2 opacity-[0.07] rotate-6">
     <img src="/assets/ondas.png" alt="" class="pointer-events-none absolute -left-32 top-1/4 w-[300px] -translate-y-1/2 -scale-x-100 opacity-[0.07] rotate-6">
@@ -10,15 +10,15 @@
         <p class="text-center py-24 text-red-400">{{ erro() }}</p>
     }
     @else if (disco(); as d) {
-        <section class="px-8 md:px-16 lg:px-24 py-12">
+        <section class="relative px-8 md:px-16 lg:px-24 py-12">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="flex justify-center">
+                <div appAnimarScroll class="flex justify-center opacity-0 translate-y-8 transition-all duration-700 ease-out">
                     <div class="vinil" [class.girando]="girando()" (click)="girar()">
                         <img [src]="d.capa" [alt]="d.titulo" class="rounded-full w-72 md:w-96 cursor-pointer" />
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-4">
+                <div appAnimarScroll class="flex flex-col gap-4 opacity-0 translate-y-8 transition-all duration-700 ease-out" style="transition-delay: 150ms">
                     <div>
                         <h2 class="font-titulo text-3xl font-bold">{{ d.titulo }}</h2>
                         <p class="text-creme/70 mt-1">{{ d.artista }}</p>
@@ -31,28 +31,31 @@
                         </button>
 
                         <button (click)="onFavoritar()" [class.text-destaque]="favoritado()" [class.border-destaque]="favoritado()"
-                        class="border border-creme/20 rounded-full w-11 h-11 flex items-center justify-center text-lg transition-colors shrink-0 cursor-pointer">
+                                class="border border-[#B8986A]/60 rounded-full w-11 h-11 flex items-center justify-center text-lg transition-colors shrink-0 cursor-pointer text-[#B8986A]">
                             {{ favoritado() ? '♥' : '♡' }}
                         </button>
                     </div>
 
                     <div class="mt-6">
                         @if (ladoApareceu(); as lado) {
-                            <div>
+                            <div class="faixa-animada">
                                 <h3 class="font-titulo text-sm font-bold tracking-widest text-creme/70 mb-2">
                                 LADO {{ lado }}
                                 </h3>
                                 <ul class="text-sm list-none space-y-1">
-                                @for (faixa of (lado === 'A' ? d.ladoA : d.ladoB); track faixa) {
-                                    <li>{{ faixa }}</li>
+                                @for (faixa of (lado === 'A' ? d.ladoA : d.ladoB); track faixa; let i = $index) {
+                                    <li class="faixa-animada" [style.animation-delay.ms]="i * 80">{{ faixa }}</li>
                                 } @empty {
                                     <li class="opacity-60">Sem faixas listadas pra esse lado.</li>
                                 }
                                 </ul>
                             </div>
-                        } 
+                        }
                         @else {
-                            <p class="text-sm opacity-60">Clique no disco pra girar e ver o lado A/B</p>
+                            <p class="inline-flex items-center gap-6 border border-[#B8986A]/60 rounded-lg px-5 py-3 text-sm text-creme/80">
+                                Clique no disco pra girar e ver o lado A/B
+                                <span class="text-[#B8986A]">↻</span>
+                            </p>                        
                         }
                     </div>
                 </div>
